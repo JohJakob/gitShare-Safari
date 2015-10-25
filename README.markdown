@@ -1,6 +1,6 @@
 # gitShare-Safari
 
-gitShare is a small browser extension that allows you to share GitHub projects directly on Twitter. @LukyVj created the [original extension](https://github.com/LukyVj/gitShare) for Google Chrome and I adopted it to work in Safari as well.
+gitShare is a small browser extension that allows you to share GitHub projects directly on Twitter. [@LukyVj](https://github.com/LukyVj) created the [original extension](https://github.com/LukyVj/gitShare) for Google Chrome and I adopted it to work in Safari as well.
 
 ## Installation
 
@@ -13,4 +13,4 @@ I am going to submit the extension to the Safari Extensions Gallery. That will h
 
 ## Usage
 
-When installed, the extension will provide a „Share“ button next to the three action buttons („Watch“, „Star“ and „Fork“) on every repository page. By clicking it, a tweet gets prepared including the repository’s title, its description and its GitHub page.
+When installed, the extension will provide a "Share" button next to the three action buttons ("Watch", "Star" and "Fork") on every repository page. By clicking it, a tweet gets prepared including the repository’s title, its description and its GitHub page.
