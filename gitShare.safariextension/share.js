@@ -9,6 +9,10 @@ if (document.getElementsByClassName("repository-meta-content")[0]) {
   var description = document.getElementsByClassName("repository-meta-content")[0].innerText;
 
   button.href = "https://twitter.com/intent/tweet?text=" + document.title + "%20-%20" + description + "%20" + document.location;
+} else if (document.getElementsByClassName("repository-description")[0]) {
+  var description = document.getElementsByClassName("repository-description")[0].innerText;
+
+  button.href = "https://twitter.com/intent/tweet?text=" + document.title + "%20-%20" + description + "%20" + document.location;
 } else {
   button.href = "https://twitter.com/intent/tweet?text=" + document.title + "%20" + document.location;
 }
