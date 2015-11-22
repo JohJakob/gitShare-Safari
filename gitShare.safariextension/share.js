@@ -5,8 +5,8 @@ var button = document.createElement("a");
 var span = document.createElement("span");
 var text = document.createTextNode(" Share");
 
-if (document.getElementsByClassName("repository-description")[0]) {
-  var description = document.getElementsByClassName("repository-description")[0].innerText;
+if (document.getElementsByClassName("repository-meta-content")[0]) {
+  var description = document.getElementsByClassName("repository-meta-content")[0].innerText;
 
   button.href = "https://twitter.com/intent/tweet?text=" + document.title + "%20-%20" + description + "%20" + document.location;
 } else {
