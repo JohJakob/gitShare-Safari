@@ -11,4 +11,4 @@ gitShare is a small browser extension that allows you to share GitHub projects d
 
 ## Usage
 
-When installed, the extension will provide a "Share" button next to the three action buttons ("Watch", "Star" and "Fork") on every repository page. By clicking it, a tweet gets prepared including the repository’s title, its description and the link to its GitHub page.
+When installed, the extension will provide a "Share" button next to the three action buttons ("Watch", "Star" and "Fork") on every repository page. Click it and share the repository easily on Twitter and Facebook.
