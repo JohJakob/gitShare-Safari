@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Johannes Jakob</string>
 	<key>Builder Version</key>
-	<string>11601.2.7.2</string>
+	<string>11601.4.4</string>
 	<key>CFBundleDisplayName</key>
 	<string>gitShare</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
+	<string>1.2</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Content</key>
@@ -45,6 +45,6 @@
 		</dict>
 	</dict>
 	<key>Website</key>
-	<string>http://johjakob.de</string>
+	<string>http://www.johjakob.de</string>
 </dict>
 </plist>
