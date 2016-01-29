@@ -1,4 +1,4 @@
-# ![](https://raw.githubusercontent.com/JohJakob/gitShare-Safari/master/Icon.svg) gitShare-Safari
+# gitShare-Safari
 
 gitShare is a small browser extension that allows you to share GitHub projects directly on Twitter. [@LukyVj](https://github.com/LukyVj) created the [original extension](https://github.com/LukyVj/gitShare) for Google Chrome and I adopted it to work in Safari as well.
 
