@@ -2,6 +2,8 @@
 
 // Made with <3 in Germany
 
+// Create requiered elements (based on the "Watch" button)
+
 var li = document.createElement("li");
 var liButton = document.createElement("a");
 var menu = document.createElement("div");
@@ -30,6 +32,8 @@ var googlePlusIcon = document.createElement("span");
 var googlePlusMenuItemText = document.createElement("div");
 var googlePlusMenuItemHeading = document.createElement("span");
 
+// Check whether the new or the old repository design is active and set the link for Twitter
+
 if (document.getElementsByClassName("repository-meta-content")[0]) {
   var description = document.getElementsByClassName("repository-meta-content")[0].innerText;
 
@@ -42,6 +46,8 @@ if (document.getElementsByClassName("repository-meta-content")[0]) {
   twitterLink.href = "https://twitter.com/intent/tweet?text=" + document.title + "%20" + document.location;
 }
 
+// Set the links for Facebook and Google+ and configure all links
+
 twitterLink.target = "_blank";
 twitterLink.style.color = "#333";
 twitterLink.style.textDecoration = "none";
@@ -53,6 +59,8 @@ googlePlusLink.href = "https://plus.google.com/share?url=" + document.location;
 googlePlusLink.target = "_blank";
 googlePlusLink.style.color = "#333";
 googlePlusLink.style.textDecoration = "none";
+
+// Configure all elements
 
 menu.className = "select-menu js-menu-container js-select-menu";
 liButton.className = "btn btn-sm select-menu-button js-menu-target";
@@ -108,6 +116,9 @@ googlePlusMenuItemText.className = "select-menu-item-text";
 googlePlusMenuItemHeading.className = "select-menu-item-heading";
 googlePlusMenuItemHeading.id = "googlePlusGitShareMenuItemHeading";
 googlePlusMenuItemHeading.innerHTML = "Google+";
+
+// Append all elements to their parent elements
+
 twitterMenuItemText.appendChild(twitterMenuItemHeading);
 twitterMenuItem.appendChild(twitterIcon);
 twitterMenuItem.appendChild(twitterMenuItemText);
@@ -134,6 +145,8 @@ liButton.appendChild(menuButton);
 menu.appendChild(liButton);
 menu.appendChild(modalHolder);
 li.appendChild(menu);
+
+// Append the "Share" button to the page (when it is a repository page)
 
 if (document.getElementsByClassName("pagehead-actions")[0] && document.title != "Your Followers" && document.title != "You're following") {
   document.getElementsByClassName("pagehead-actions")[0].appendChild(li);
