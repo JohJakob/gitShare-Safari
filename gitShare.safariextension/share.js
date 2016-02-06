@@ -2,7 +2,7 @@
 
 // Made with <3 in Germany
 
-// Create requiered elements (based on the "Watch" button)
+// Create required elements (based on the "Watch" button)
 
 var li = document.createElement("li");
 var liButton = document.createElement("a");
