@@ -1,4 +1,4 @@
-// gitShare-Safari 1.3.1
+// gitShare-Safari 1.4
 
 // Made with <3 in Germany
 
@@ -6,6 +6,9 @@
 
 var title = document.title.toString();
 var author = document.getElementsByClassName("author")[0].innerText;
+var repositoryRegex = new RegExp("\/(.*):");
+var repository = repositoryRegex.exec(title)[1];
+var xhttpFail = false;
 var slicedTitle = title.slice(author.length + 1);
 var link = document.location.toString();
 var slicedLink = link.slice(8);
@@ -35,6 +38,8 @@ var googlePlusLink = document.createElement("a");
 var googlePlusIcon = document.createElement("span");
 var googlePlusMenuItemText = document.createElement("div");
 var googlePlusMenuItemHeading = document.createElement("span");
+
+var xhttp = new XMLHttpRequest();
 
 // Set and configure all links
 
@@ -107,6 +112,38 @@ googlePlusMenuItemText.className = "select-menu-item-text";
 googlePlusMenuItemHeading.className = "select-menu-item-heading";
 googlePlusMenuItemHeading.id = "googlePlusGitShareMenuItemHeading";
 googlePlusMenuItemHeading.innerHTML = "Google+";
+
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState == 4 && xhttp.status == 200) {
+    var response = xhttp.responseText;
+    var responseRegex = new RegExp("<!-- twitter: (@.*) -->");
+    if (responseRegex.test(response) > 0) {
+      var username = responseRegex.exec(response)[1];
+      twitterLink.href = "https://twitter.com/intent/tweet?text=" + slicedTitle + "%20" + slicedLink + " by " + username;
+    }
+  } else if (xhttp.status == 404) {
+    xhttpFail = true;
+  }
+};
+
+xhttp.open("GET", "https://raw.githubusercontent.com/" + author + "/" + repository + "/master/" + "README.md");
+xhttp.send();
+
+if (xhttpFail) {
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      var response = xhttp.responseText;
+      var responseRegex = new RegExp("<!-- twitter: (@.*) -->");
+      if (responseRegex.test(response) > 0) {
+        var username = responseRegex.exec(response)[1];
+        twitterLink.href = "https://twitter.com/intent/tweet?text=" + slicedTitle + "%20" + slicedLink + " by " + username;
+      }
+    }
+  };
+
+  xhttp.open("GET", "https://raw.githubusercontent.com/" + author + "/" + repository + "/master/" + "README.markdown");
+  xhttp.send();
+}
 
 // Append all elements to their parent elements
 
