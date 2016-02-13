@@ -1,14 +1,18 @@
-// gitShare-Safari 1.3
+// gitShare-Safari 1.3.1
 
 // Made with <3 in Germany
 
 // Create required elements (based on the "Watch" button)
 
+var title = document.title.toString();
+var author = document.getElementsByClassName("author")[0].innerText;
+var slicedTitle = title.slice(author.length + 1);
+var link = document.location.toString();
+var slicedLink = link.slice(8);
 var li = document.createElement("li");
 var liButton = document.createElement("a");
 var menu = document.createElement("div");
 var menuButton = document.createElement("span");
-var menuButtonIcon = document.createElement("span");
 var menuButtonText = document.createTextNode(" Share ");
 var modalHolder = document.createElement("div");
 var modal = document.createElement("div");
@@ -32,30 +36,17 @@ var googlePlusIcon = document.createElement("span");
 var googlePlusMenuItemText = document.createElement("div");
 var googlePlusMenuItemHeading = document.createElement("span");
 
-// Check whether the new or the old repository design is active and set the link for Twitter
+// Set and configure all links
 
-if (document.getElementsByClassName("repository-meta-content")[0]) {
-  var description = document.getElementsByClassName("repository-meta-content")[0].innerText;
-
-  twitterLink.href = "https://twitter.com/intent/tweet?text=" + document.title + "%20\u2013%20" + description + "%20" + document.location;
-} else if (document.getElementsByClassName("repository-description")[0]) {
-  var description = document.getElementsByClassName("repository-description")[0].innerText;
-
-  twitterLink.href = "https://twitter.com/intent/tweet?text=" + document.title + "%20\u2013%20" + description + "%20" + document.location;
-} else {
-  twitterLink.href = "https://twitter.com/intent/tweet?text=" + document.title + "%20" + document.location;
-}
-
-// Set the links for Facebook and Google+ and configure all links
-
+twitterLink.href = "https://twitter.com/intent/tweet?text=" + slicedTitle + "%20" + slicedLink;
 twitterLink.target = "_blank";
 twitterLink.style.color = "#333";
 twitterLink.style.textDecoration = "none";
-facebookLink.href = "https://www.facebook.com/sharer/sharer.php?u=" + document.location;
+facebookLink.href = "https://www.facebook.com/sharer/sharer.php?u=" + link;
 facebookLink.target = "_blank";
 facebookLink.style.color = "#333";
 facebookLink.style.textDecoration = "none";
-googlePlusLink.href = "https://plus.google.com/share?url=" + document.location;
+googlePlusLink.href = "https://plus.google.com/share?url=" + link;
 googlePlusLink.target = "_blank";
 googlePlusLink.style.color = "#333";
 googlePlusLink.style.textDecoration = "none";
@@ -66,7 +57,7 @@ menu.className = "select-menu js-menu-container js-select-menu";
 liButton.className = "btn btn-sm select-menu-button js-menu-target";
 liButton.setAttribute("role", "button");
 menuButton.className = "js-select-button";
-menuButtonIcon.className = "octicon octicon-file-symlink-file";
+menuButton.innerHTML = '<svg class="octicon octicon-file-symlink-file" width="12" height="16" viewBox="0 0 12 16"><path fill="#333333" d="M8.5 1H1C0.45 1 0 1.45 0 2v12c0 0.55 0.45 1 1 1h10c0.55 0 1-0.45 1-1V4.5L8.5 1z m2.5 13H1V2h7l3 3v9zM6 4.5l4 3-4 3V8.5c-0.98-0.02-1.84 0.22-2.55 0.7s-1.19 1.25-1.45 2.3c0.02-1.64 0.39-2.88 1.13-3.73 0.73-0.84 1.69-1.27 2.88-1.27V4.5z"></path></svg>';
 modalHolder.className = "select-menu-modal-holder";
 modal.className = "select-menu-modal js-menu-content";
 header.className = "select-menu-header";
@@ -139,7 +130,6 @@ header.appendChild(title);
 modal.appendChild(header);
 modal.appendChild(list);
 modalHolder.appendChild(modal);
-menuButton.appendChild(menuButtonIcon);
 menuButton.appendChild(menuButtonText);
 liButton.appendChild(menuButton);
 menu.appendChild(liButton);
