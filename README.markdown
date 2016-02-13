@@ -21,4 +21,4 @@ When installed, the extension will provide a "Share" button next to the three ac
 
 Sometimes the Twitter and GitHub usernames of a person are different. Therefore gitShare-Safari will search for the Twitter username in the README to let your followers know who made this awesome stuff you're sharing.
 
-All you have to do to use this feature is adding this line into your README: ```<!-- twitter: @username -->```. Don't forget to replace @username with your real Twitter username!
+All you have to do to use this feature is adding this line into your README: ```<!-- twitter: @username -->```. Don't forget to replace ```@username``` with your real Twitter username! You can use multiple usernames, too.
