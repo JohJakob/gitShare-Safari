@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.3.1</string>
+	<string>1.4</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Content</key>
@@ -45,6 +45,6 @@
 		</dict>
 	</dict>
 	<key>Website</key>
-	<string>http://www.johjakob.de</string>
+	<string>http://johjakob.de</string>
 </dict>
 </plist>
