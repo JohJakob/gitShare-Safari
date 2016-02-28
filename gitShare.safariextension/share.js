@@ -12,7 +12,6 @@ var xhttpFail = false;
 var slicedTitle = title.slice(author.length + 1);
 var link = document.location.toString();
 var slicedLink = link.slice(8);
-var branch = document.getElementsByClassName("js-select-button css-truncate-target")[0].innerText;
 var li = document.createElement("li");
 var liButton = document.createElement("a");
 var menu = document.createElement("div");
@@ -127,7 +126,7 @@ xhttp.onreadystatechange = function() {
   }
 };
 
-xhttp.open("GET", "https://raw.githubusercontent.com/" + author + "/" + repository + "/" + branch + "/" + "README.md");
+xhttp.open("GET", "https://raw.githubusercontent.com/" + author + "/" + repository + "/master/" + "README.md");
 xhttp.send();
 
 if (xhttpFail) {
@@ -142,7 +141,7 @@ if (xhttpFail) {
     }
   };
 
-  xhttp.open("GET", "https://raw.githubusercontent.com/" + author + "/" + repository + "/" + branch + "/" + "README.markdown");
+  xhttp.open("GET", "https://raw.githubusercontent.com/" + author + "/" + repository + "/master/" + "README.markdown");
   xhttp.send();
 }
 
